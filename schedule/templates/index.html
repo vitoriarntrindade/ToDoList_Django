@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+
+    {% extends "model_page.html" %}
+</head>
+<body>
+
+    {% block content %}
+     <h2 class="title">Check your schedules!</h2>
+    <a href="event/">
+        <button type="button">add new</button>
+    </a>
+    <section class="iteration">
+        <ul>
+            {% for evt in event %}
+                <div><li>{{ evt.title }} {{ evt.date }}
+                    <section class="botton_conf">
+                         <a href="event/?id={{ evt.id }}">Edit</a>
+
+                             <a href="event/delete/{{ evt.id }}">Delete</a>
+                    </section>
+                </li>
+                </div>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endblock %}
+
+</body>
+</html>
