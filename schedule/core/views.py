@@ -35,7 +35,7 @@ def submit_login(request):
             login(request, user)
             return redirect('/')
         else:
-            redirect('/')
+            return redirect('/')
 
 
 @login_required(login_url='/login/')
